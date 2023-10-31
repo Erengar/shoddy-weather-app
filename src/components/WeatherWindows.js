@@ -30,8 +30,8 @@ function checkWeather(props, time) {
 
 
 function WeatherWindows(props) {
-    const time = new Date().toLocaleTimeString('en-US',props.weather.timezone)
     if(JSON.stringify(props.weather) !== '{}'){
+        const time = new Date().toLocaleTimeString('en-US',props.weather.timezone)
 
         const iconCode = checkWeather(props, time);
 
