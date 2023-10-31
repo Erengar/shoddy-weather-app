@@ -62,18 +62,33 @@ html {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 5vw
+  gap: 5vw;
+  padding:0;
 }
 
 .place {
   border: 3px double black;
-  /*box-shadow: 0 0 10px ;*/
   padding: 20px;
   cursor: pointer;
 }
 
 .place:hover {
   box-shadow: 0 0 10px #fff;
+}
+
+@media (width < 1200px){
+  .places-list {
+    flex-direction: column;
+    gap:1px;
+  }
+  .place {
+    padding: 1vw;
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
 }
 
 .weather-window {

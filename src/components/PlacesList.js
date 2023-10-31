@@ -21,8 +21,7 @@ function PlacesList(props) {
             {listOfCities.map((city, index) => 
             <li key={index} index={index} className='place' onClick={getWeather} >
                 <h2 className='place-name' >{city.name}</h2>
-                <p className='place-lat'>{city.country}</p>
-                <p className='place-lon'>{city.state}</p>
+                <p className='place-country'>{city.country}</p>
             </li>
             )}
         </ul>
