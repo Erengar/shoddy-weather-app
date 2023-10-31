@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 function checkWeather(props, time) {
     let weatherID = props.weather.weather[0].id;
     let iconCode = ''
@@ -28,10 +30,19 @@ function checkWeather(props, time) {
     return iconCode;
 }
 
+function capitalizeFirstLetter(string) {
+    let words = string.split(' ');
+    let final = words.map((word) => {
+        return word[0].toUpperCase() + word.substring(1);
+    }).join(' ');
+    return final;
+}
+
 
 function WeatherWindows(props) {
     if(JSON.stringify(props.weather) !== '{}'){
-        const time = new Date().toLocaleTimeString('en-US',props.weather.timezone)
+        //const time = new Date().toLocaleTimeString('en-US')
+        const time = moment().utc().add(props.weather.timezone, 's').format('HH:mm:ss');
 
         const iconCode = checkWeather(props, time);
 
@@ -51,7 +62,7 @@ function WeatherWindows(props) {
             <section className='weather-window'>
                 {time}
                 <i>{}</i>
-                <h1 className ='desc'>{props.weather.weather[0].description}</h1>
+                <h1 className ='desc'>{capitalizeFirstLetter(props.weather.weather[0].description)}</h1>
                 <h2 className ='temperature'>{props.weather.main.temp} °C</h2>
                 <p><strong>Pressure:</strong> {props.weather.main.pressure} hPa</p>
                 <p><strong>Humidity:</strong> {props.weather.main.humidity} %</p>
