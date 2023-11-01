@@ -2,6 +2,7 @@ import moment from 'moment';
 import MultipleDaysWeather from './MultipleDaysWeather';
 import capitalizeFirstLetter  from './helperFunctions/capitalizeFirstLetter';
 import checkWeather from './helperFunctions/checkWeather';
+import setBackground from './helperFunctions/setBackground';
 
 function WeatherWindows(props) {
 
@@ -9,6 +10,8 @@ function WeatherWindows(props) {
         const time = moment().utc().add(props.weather.timezone, 's').format('HH:mm:ss');
 
         const iconCode = checkWeather(props.weather, time);
+
+        setBackground(time, iconCode);
 
         fetch(`https://openweathermap.org/img/wn/${iconCode}.png`)
         .then(response => response.blob())
@@ -33,6 +36,7 @@ function WeatherWindows(props) {
                     <p><strong>Humidity:</strong> {props.weather.main.humidity} %</p>
                     <p><strong>Wind-speed:</strong> {props.weather.wind.speed} meter/sec</p>
                 </section>
+                <h1 className="nextTitle">Next 24 Hours</h1>
                 <MultipleDaysWeather multipleDaysWeather={props.multipleDaysWeather} weather={props.weather} />
             </>
         )

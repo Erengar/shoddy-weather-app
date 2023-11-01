@@ -26,8 +26,8 @@ function MultipleDaysCell(props) {
 
     return (
         <li key={props.index} data-index={props.index} className="multiple-days-cell">
-            <p>{props.day.dt_txt.split(' ')[1]}</p>
-            <p><i></i></p>
+            <p className="cellsTime" >{props.day.dt_txt.split(' ')[1]}</p>
+            <i></i>
             <p>{capitalizeFirstLetter(props.day.weather[0].description)}</p>
             <p><img className='icon-class' src={thermometerIcon} alt='temp'/>{props.day.main.temp} °C</p>
             <p><img className='icon-class' src={pressureIcon} alt='pressure'/>{props.day.main.pressure} hPa</p>

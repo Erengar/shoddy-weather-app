@@ -3,9 +3,10 @@
   src: url("./fonts/Poppins-Regular.ttf");
 }
 
-html {
-  background: #2269c78c;
+body {
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   font-family: Poppins, sans-serif;
+  
 }
 
 .search-window {
@@ -22,7 +23,6 @@ html {
 
 #search-label {
   font-size: 2rem;
-  color: #fff;
   margin-bottom: 1rem;
 }
 
@@ -69,7 +69,7 @@ html {
   align-items: center;
   justify-content: center;
   gap: 3vw;
-  padding:0;
+  padding:5px;
 }
 
 .place {
@@ -142,6 +142,12 @@ html {
     }
 }
 
+.nextTitle {
+  margin:0;
+  display:flex;
+  justify-content: center;
+}
+
 .multiple-days-weather {
   list-style: none;
   width:100%;
@@ -159,7 +165,8 @@ html {
   padding: 20px;
   margin: 5px;
   display: inline-block;
-  width: clamp(180px,13vw,15vw);
+  width: clamp(180px,10vw,15vw);
+  padding-bottom:0;
 }
 
 .multiple-days-cell > * {
@@ -167,10 +174,55 @@ html {
   justify-content: center;
 }
 
+
+.cellsTime {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
 .icon-class {
   height: 15px;
   position: relative;
   bottom: -4px;
   left: -5px;
+}
+
+
+
+.night {
+  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+  color:rgba(255, 255, 255, 0.815);
+}
+
+
+.night-rain {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+  background-blend-mode: multiply,multiply;
+  color:rgb(255, 255, 255);
+}
+
+.night-clouds {
+  background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898;
+  background-blend-mode: multiply,multiply;
+  color:rgb(0, 0, 0);
+}
+
+.rain {
+  background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%);
+}
+
+.mist {
+  background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+  background-blend-mode: normal, lighten, soft-light;
+}
+
+.snow {
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  color: rgba(0, 0, 0, 0.774);
+}
+
+.clouds {
+  background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+  background-blend-mode: normal, lighten, soft-light;
 }
 /*# sourceMappingURL=index.css.map */
