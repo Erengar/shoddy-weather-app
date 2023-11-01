@@ -10,10 +10,16 @@ function PlacesList(props) {
         }
         const lat = listOfCities[key].lat;
         const lon = listOfCities[key].lon;
+
+        const reponse2 = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${props.apiKey}&units=metric&cnt=10`);
+        const data2 = await reponse2.json();
+        props.setMultipleDaysWeather(data2);
+
         const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${props.apiKey}&units=metric`);
         const data = await response.json();
         props.setWeather(data);
         props.setListOfCities([]);
+
     }
 
     return (

@@ -9,7 +9,7 @@ html {
 }
 
 .search-window {
-  margin-top: 5vh;
+  margin-top: 1vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,6 +39,12 @@ html {
 
 #search:focus {
   outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+#search:hover {
+  border: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 .search-animation {
@@ -52,7 +58,7 @@ html {
       margin-top: 30vh;
     }
     100% {
-      margin-top: 5vh;
+      margin-top: 1vh;
     }
 }
 
@@ -62,14 +68,18 @@ html {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 5vw;
+  gap: 3vw;
   padding:0;
 }
 
 .place {
+  border-radius: 10px;
   border: 3px double black;
   padding: 20px;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .place:hover {
@@ -85,6 +95,7 @@ html {
     padding: 1vw;
     width: 100%;
     display:flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border: 2px double rgba(0, 0, 0, 0.6);
@@ -99,6 +110,7 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2vh;
 }
 
 .temperature {
@@ -111,5 +123,54 @@ html {
   margin: 0;
 }
 
+.weather-window > p {
+  margin-top: 8px;
+}
 
+.weather-animation {
+    animation-name: weather;
+    animation-duration:0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes weather {
+    0% {
+      margin-top: 50vh;
+    }
+    100% {
+      margin-top: 0px;
+    }
+}
+
+.multiple-days-weather {
+  list-style: none;
+  width:100%;
+  height:100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: block;
+  white-space: nowrap;
+  scrollbar-width: thin;
+}
+
+.multiple-days-cell {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 5px;
+  display: inline-block;
+  width: clamp(180px,13vw,15vw);
+}
+
+.multiple-days-cell > * {
+  display:flex;
+  justify-content: center;
+}
+
+.icon-class {
+  height: 15px;
+  position: relative;
+  bottom: -4px;
+  left: -5px;
+}
 /*# sourceMappingURL=index.css.map */

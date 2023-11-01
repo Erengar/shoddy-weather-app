@@ -5,7 +5,7 @@ import {  useState } from 'react';
 function App() {
 	const [listOfCities, setListOfCities] = useState([]);
 	const [weather, setWeather] = useState({});
-	//const apiKey = 'f57bd679f344fe7d951c60e2df18bd21';
+	const [multipleDaysWeather, setMultipleDaysWeather] = useState([]);
 	const apiKey = '3571424b04361cc5e20201ea97ba1a23';
 
 	function handleSubmit(event) {
@@ -23,11 +23,11 @@ function App() {
 		<main>
 		<section>
 			<form className='search-window fade-margin' onSubmit={handleSubmit}>
-				<label htmlFor='search' id='search-label'>Place: </label>
+				<label htmlFor='search' id='search-label'>Location: </label>
 				<input id='search' />
 			</form>
-			<PlacesList listOfCities={listOfCities} setListOfCities={setListOfCities} setWeather={setWeather} apiKey={apiKey} />
-			<WeatherWindows weather={weather}/>
+			<PlacesList listOfCities={listOfCities} setListOfCities={setListOfCities} setWeather={setWeather} setMultipleDaysWeather={setMultipleDaysWeather} apiKey={apiKey} />
+			<WeatherWindows weather={weather} multipleDaysWeather={multipleDaysWeather} />
 		</section>
 		</main>
 	);
