@@ -15,7 +15,7 @@ function App() {
 		fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${input}&limit=${limit}&appid=${apiKey}`)
 		.then(response => response.json())
 		.then(data => setListOfCities(data))
-		.catch(error => console.log(error));
+		.catch(error => setListOfCities(error));
 		event.target.classList.add('search-animation')
 		event.target.classList.remove('fade-margin')
 	}

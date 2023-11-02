@@ -111,6 +111,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 2vh;
+  background-color: rgba(255, 255, 255, 0.2)
 }
 
 .temperature {
@@ -167,6 +168,7 @@ body {
   display: inline-block;
   width: clamp(180px,10vw,15vw);
   padding-bottom:0;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .multiple-days-cell > * {
