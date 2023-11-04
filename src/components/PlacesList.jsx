@@ -19,6 +19,7 @@ function PlacesList(props) {
         const data = await response.json();
         props.setWeather(data);
         props.setListOfCities([]);
+        props.setShouldWeatherMount(true);
 
     }
 
