@@ -6,19 +6,20 @@
 body {
   background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
   font-family: Poppins, sans-serif;
-  min-height: 69vh; /* Add this line */
+  min-height: 98vh; /* Add this line */
 }
 
 .search-window {
-  margin-top: 1vh;
+  padding-top: 1vh;
   display: flex;
+  position:relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
 .fade-margin {
-  margin-top: 30vh;
+  padding-top: 30vh;
 }
 
 #search-label {
