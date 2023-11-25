@@ -4,10 +4,10 @@ import thermometerIcon from './icons/thermometer.png';
 import windIcon from './icons/wind.png';
 import humidityIcon from './icons/humidity.png';
 import pressureIcon from './icons/pressure.png';
+import { useEffect } from "react";
 
 function MultipleDaysCell(props) {
 
-    let iconCode = checkWeather(props.day,props.day.dt_txt.split(' ')[1]);
 
     async function getIcon(iconCode) {
         const response = await fetch(`https://openweathermap.org/img/wn/${iconCode}.png`);
@@ -22,10 +22,14 @@ function MultipleDaysCell(props) {
         }
     }
 
-    getIcon(iconCode);
+    useEffect(() => {
+        let iconCode = checkWeather(props.day,props.day.dt_txt.split(' ')[1]);
+        getIcon(iconCode);
+    
+    });
 
     return (
-        <li key={props.index} data-index={props.index} className="multiple-days-cell">
+        <li key={props.day.main.temp +"_"+ props.index} data-index={props.index} className="multiple-days-cell">
             <p className="cellsTime" >{props.day.dt_txt.split(' ')[1]}</p>
             <i></i>
             <p>{capitalizeFirstLetter(props.day.weather[0].description)}</p>

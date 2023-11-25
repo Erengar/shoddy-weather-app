@@ -26,7 +26,7 @@ function PlacesList(props) {
     return (
         <ul className='places-list'>
             {listOfCities.map((city, index) => 
-            <li key={index} index={index} className='place' onClick={getWeather} >
+            <li key={city+index} index={index} className='place' onClick={getWeather} >
                 <h2 className='place-name' >{city.name}</h2>
                 <p className='place-country'>{city.country}</p>
             </li>

@@ -9,7 +9,6 @@ function filterUniqueCities(cities){
 			lon.add(city.lon);
             name.add(city.name);
             state.add(city.state);
-			console.log(city, lat, lon)
 			return true;
 		}
 		return false;

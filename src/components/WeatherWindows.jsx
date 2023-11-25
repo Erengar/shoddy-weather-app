@@ -3,10 +3,13 @@ import MultipleDaysWeather from './MultipleDaysWeather';
 import capitalizeFirstLetter  from './helperFunctions/capitalizeFirstLetter';
 import checkWeather from './helperFunctions/checkWeather';
 import setBackground from './helperFunctions/setBackground';
+import { useEffect } from 'react';
+
 
 function WeatherWindows(props) {
-
     const time = moment().utc().add(props.weather.timezone, 's').format('HH:mm:ss');
+
+    useEffect(() => {
 
     const iconCode = checkWeather(props.weather, time);
 
@@ -24,6 +27,10 @@ function WeatherWindows(props) {
             iconElement.appendChild(img);
         }
     })
+
+    })
+
+
     return (
         <>
             <section className='weather-window weather-animation'>
