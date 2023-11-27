@@ -1,3 +1,9 @@
+/**
+ * This function checks the weather ID and time of day to determine which icon to display
+ * @param {*} props 
+ * @param {*} time 
+ * @returns string of icon code
+ */
 function checkWeather(props, time) {
     let weatherID = props.weather[0].id;
     /*let sunrise = new Date(props.weather.sys.sunrise * 1000).toLocaleTimeString('default', {hour: '2-digit', minute: '2-digit'})

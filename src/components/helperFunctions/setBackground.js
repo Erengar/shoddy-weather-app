@@ -1,3 +1,8 @@
+/**
+ * This function sets the background based on the time of day and weather
+ * @param {*} time 
+ * @param {*} iconCode 
+ */
 function setBackground(time, iconCode) {
     document.body.removeAttribute('class');
     if (time > '18:00:00' | time < '06:00:00') {

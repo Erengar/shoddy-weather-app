@@ -1,3 +1,8 @@
+/**
+ * This function filters out duplicate cities from the API call
+ * @param {*} cities 
+ * @returns array of unique cities
+ */
 function filterUniqueCities(cities){
 	let lat = new Set();
 	let lon = new Set();

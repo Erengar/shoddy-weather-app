@@ -11,6 +11,11 @@ function App() {
 	const [multipleDaysWeather, setMultipleDaysWeather] = useState([]);
 	const apiKey = '3571424b04361cc5e20201ea97ba1a23';
 
+	
+	/**
+	 * Fetches the weather data for the selected city.
+	 * @param {*} event 
+	 */
 	function handleSubmit(event) {
 		setShouldWeatherMount(false);
 		event.preventDefault();

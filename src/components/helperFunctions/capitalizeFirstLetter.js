@@ -1,3 +1,8 @@
+/**
+ * 
+ * @param {*} string 
+ * @returns {string} string with first letter capitalized
+ */
 function capitalizeFirstLetter(string) {
     let words = string.split(' ');
     let final = words.map((word) => {
